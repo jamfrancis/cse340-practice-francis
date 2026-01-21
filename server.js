@@ -136,7 +136,7 @@ if (NODE_ENV.includes('dev')) {
             console.log(`WebSocket server is running on port ${wsPort}`);
         });
 
-        WebSocketServer.on('error', (error) => {
+        wsServer.on('error', (error) => {
             console.error('WebSocket server error:', error);
         });
     }   catch (error) {
@@ -189,10 +189,6 @@ app.use((err, req, res, next) => {
 });
 
 // Start Server
-app.get('/', (req, res) => {
-    res.send();
-});
-
 app.listen(PORT, () => {
     console.log(`Server is running on http://127.0.0.1:${PORT}`);
 });
