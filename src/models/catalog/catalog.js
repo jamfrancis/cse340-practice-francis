@@ -103,3 +103,16 @@ const getSortedSections = (sections, sortBy) => {
     }
 };
 
+const getCoursesByDepartment = () => {
+    const departments = {};
+    Object.values(courses).forEach(course => {
+        if (!departments[course.department]) {
+            departments[course.department] = [];
+        }
+        departments[course.department].push(course);
+    });
+    return departments;
+};
+export { getAllCourses, getCourseById, getSortedSections, getCoursesByDepartment };
+
+
